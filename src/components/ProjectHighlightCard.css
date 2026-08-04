@@ -1,0 +1,22 @@
+.highlight-card {
+  border: 1px solid var(--line);
+  padding: clamp(24px, 3vw, 34px);
+  min-height: 210px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background: var(--ink);
+}
+
+.highlight-card__title {
+  font-family: var(--font-display);
+  font-size: clamp(1.15rem, 2vw, 1.4rem);
+  margin: 0;
+}
+
+.highlight-card__desc {
+  color: var(--parchment-dim);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin: 14px 0 0;
+}
