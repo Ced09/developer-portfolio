@@ -1,5 +1,5 @@
 export const profile = {
   name: "Cedriss",
-  photo: "/images/profile/cedriss-profile.jpg",
+  photo: "/images/profile/Cedriss.jpg",
   photoAlt: "Cedriss, Shopify software developer",
 };

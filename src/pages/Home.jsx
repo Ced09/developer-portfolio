@@ -21,10 +21,10 @@ export default function Home() {
       <section className="section about-section" id="about">
         <div className="container about">
           <div className="about__photo">
-            <Avatar src={profile.photo} alt={profile.photoAlt} size="small" />
+            <Avatar src={profile.photo} alt={profile.photoAlt} size="large" />
           </div>
           <div className="about__copy">
-            <SectionHeading eyebrow="Cedriss · Software Developer" title="Software Developer & Shopify Specialist" />
+            <SectionHeading eyebrow="Cedriss · Software Developer" title=" Software Developer & Shopify Specialist" />
             <p className="lede about__bio">
               I’m a software developer focused on building modern web applications and Shopify storefronts. I develop and customize Shopify themes, build reusable storefront sections, and transform business requirements into responsive, maintainable, and user-friendly experiences using JavaScript, React, Liquid, HTML, and CSS.
             </p>
