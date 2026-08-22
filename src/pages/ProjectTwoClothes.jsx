@@ -54,7 +54,16 @@ export default function ProjectTwoClothes() {
           <div className="project-video__intro">
             <span className="eyebrow">Walkthrough</span>
           </div>
-          <PlaceholderMedia label="Two Clothes Loom Walkthrough" variant="video" ratio="16 / 9" />
+          
+      <div className="project-video__embed">
+        <iframe
+          src="https://www.youtube.com/embed/ivnL8NPP7gw"
+          title="Two Clothes Shopify Store Development Project Walkthrough"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowFullScreen
+        />
+      </div>
+
         </div>
       </section>
 

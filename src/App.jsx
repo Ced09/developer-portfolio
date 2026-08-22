@@ -5,23 +5,36 @@ import ScrollToTop from "./components/ScrollToTop";
 import Home from "./pages/Home";
 import ProjectTwoClothes from "./pages/ProjectTwoClothes";
 import ProjectSlateCoffee from "./pages/ProjectSlateCoffee";
+import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 
 export default function App() {
   return (
     <>
-      <a href="#main-content" className="skip-link">Skip to content</a>
+      <a href="#main-content" className="skip-link">
+        Skip to content
+      </a>
+
       <ScrollToTop />
       <Nav />
+
       <main id="main-content">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/projects/two-clothes" element={<ProjectTwoClothes />} />
-          <Route path="/projects/slate-coffee" element={<ProjectSlateCoffee />} />
+          <Route
+            path="/projects/two-clothes"
+            element={<ProjectTwoClothes />}
+          />
+          <Route
+            path="/projects/slate-coffee"
+            element={<ProjectSlateCoffee />}
+          />
+          <Route path="/contact" element={<Contact />} />
           <Route path="/404" element={<NotFound />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
+
       <Footer id="contact" />
     </>
   );

@@ -6,7 +6,7 @@ import "./Nav.css";
 const links = [
   { to: "/#about", label: "About" },
   { to: "/#projects", label: "Projects" },
-  { to: "/#contact", label: "Contact" },
+  { to: "/contact", label: "Contact" },
 ];
 
 export default function Nav() {
