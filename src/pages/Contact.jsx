@@ -1,9 +1,55 @@
+import { useState } from "react";
 import { Mail, Github, Linkedin } from "lucide-react";
 import Seo from "../components/Seo";
 import SectionHeading from "../components/SectionHeading";
 import "./Contact.css";
 
 export default function Contact() {
+  const [result, setResult] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    setIsSubmitting(true);
+    setResult("");
+
+    const form = event.target;
+    const formData = new FormData(form);
+
+    formData.append(
+      "access_key",
+      "1f9ba174-a67f-4fda-824e-0777daecfa10"
+    );
+
+    try {
+      const response = await fetch(
+        "https://api.web3forms.com/submit",
+        {
+          method: "POST",
+          body: formData,
+        }
+      );
+
+      const data = await response.json();
+
+      if (data.success) {
+        setResult("Thanks! Your message has been sent.");
+        form.reset();
+      } else {
+        setResult(
+          "Something went wrong. Please try again."
+        );
+      }
+    } catch (error) {
+      setResult(
+        "Something went wrong. Please try again."
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <>
       <Seo
@@ -26,7 +72,10 @@ export default function Contact() {
           </p>
 
           <div className="contact-layout">
-            <form className="contact-form">
+            <form
+              className="contact-form"
+              onSubmit={handleSubmit}
+            >
               <div className="contact-form__group">
                 <label htmlFor="name">Name</label>
                 <input
@@ -62,28 +111,47 @@ export default function Contact() {
               </div>
 
               <div className="contact-form__group">
-                <label htmlFor="projectType">Project type</label>
+                <label htmlFor="projectType">
+                  Project type
+                </label>
+
                 <select
-                    id="projectType"
-                    name="projectType"
-                    defaultValue=""
-                    required
+                  id="projectType"
+                  name="projectType"
+                  defaultValue=""
+                  required
                 >
-                    <option value="" disabled>
+                  <option value="" disabled>
                     Select a project type
-                    </option>
-                    <option value="shopify">Shopify Development</option>
-                    <option value="web-development">Web Development</option>
-                    <option value="react">React Application</option>
-                    <option value="maintenance">
+                  </option>
+
+                  <option value="shopify">
+                    Shopify Development
+                  </option>
+
+                  <option value="web-development">
+                    Web Development
+                  </option>
+
+                  <option value="react">
+                    React Application
+                  </option>
+
+                  <option value="maintenance">
                     Website Updates / Maintenance
-                    </option>
-                    <option value="other">Other</option>
+                  </option>
+
+                  <option value="other">
+                    Other
+                  </option>
                 </select>
               </div>
 
               <div className="contact-form__group">
-                <label htmlFor="message">Tell me about your project</label>
+                <label htmlFor="message">
+                  Tell me about your project
+                </label>
+
                 <textarea
                   id="message"
                   name="message"
@@ -93,15 +161,25 @@ export default function Contact() {
                 />
               </div>
 
-              <button type="submit" className="btn btn-primary">
-                Send Message
+              <button
+                type="submit"
+                className="btn btn-primary"
+                disabled={isSubmitting}
+              >
+                {isSubmitting ? "Sending..." : "Send Message"}
               </button>
+
+              {result && (
+                <p className="contact-form__result">
+                  {result}
+                </p>
+              )}
             </form>
 
             <aside className="contact-details">
               <span className="eyebrow">Elsewhere</span>
 
-              <a href="mailto:YOUR_EMAIL">
+              <a href="mailto:contact@cedriss.dev">
                 <Mail size={18} />
                 Email
               </a>
