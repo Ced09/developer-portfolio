@@ -34,7 +34,7 @@ export default function Contact() {
       const data = await response.json();
 
       if (data.success) {
-        setResult("Thanks! Your message has been sent.");
+        setResult("Message sent successfully.");
         form.reset();
       } else {
         setResult(
