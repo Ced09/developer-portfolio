@@ -1,4 +1,5 @@
 import { ArrowRight, Github, Linkedin } from "lucide-react";
+import { links } from "../data/links";
 import Seo from "../components/Seo";
 import ScrollReveal from "../components/ScrollReveal";
 import ProjectCard from "../components/ProjectCard";
@@ -37,12 +38,20 @@ export default function Home() {
               <a href="#projects" className="btn btn-primary">
                 View Projects <ArrowRight size={17} />
               </a>
-              <a href="https://www.linkedin.com/in/cedriss-saint-louis-87a23866/" target="_blank" rel="noreferrer" className="btn btn-secondary">
+              <a href={links.linkedin} target="_blank" rel="noreferrer" className="btn btn-secondary">
                 <Linkedin size={16} /> LinkedIn
               </a>
-              <a href="https://github.com/Ced09" target="_blank" rel="noreferrer" className="btn btn-secondary">
+              
+              {links.github && (
+              <a
+                href={links.github}
+                target="_blank"
+                rel="noreferrer"
+                 className="btn btn-secondary"
+              >
                 <Github size={16} /> GitHub
               </a>
+            )}
             </div>
           </div>
         </div>

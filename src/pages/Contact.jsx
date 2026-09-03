@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Mail, Github, Linkedin } from "lucide-react";
+import { links } from "../data/links";
 import Seo from "../components/Seo";
 import SectionHeading from "../components/SectionHeading";
 import "./Contact.css";
@@ -179,13 +180,13 @@ export default function Contact() {
             <aside className="contact-details">
               <span className="eyebrow">Elsewhere</span>
 
-              <a href="mailto:contact@cedriss.dev">
+              <a href={links.email}>
                 <Mail size={18} />
                 Email
               </a>
 
               <a
-                href="https://www.linkedin.com/in/cedriss-saint-louis-87a23866/"
+                href={links.linkedin}
                 target="_blank"
                 rel="noreferrer"
               >
@@ -193,14 +194,16 @@ export default function Contact() {
                 LinkedIn
               </a>
 
-              <a
-                href="https://github.com/Ced09"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <Github size={18} />
-                GitHub
-              </a>
+              {links.github && (
+                <a
+                  href={links.github}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <Github size={18} />
+                  GitHub
+                </a>
+              )}
             </aside>
           </div>
         </div>

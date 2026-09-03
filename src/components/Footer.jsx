@@ -1,4 +1,5 @@
 import { Github, Linkedin, Mail } from "lucide-react";
+import { links } from "../data/links";
 import "./Footer.css";
 
 export default function Footer({ id }) {
@@ -12,22 +13,24 @@ export default function Footer({ id }) {
 
         <div className="footer__links">
           <a
-            href="https://www.linkedin.com/in/cedriss-saint-louis-87a23866/"
+            href={links.linkedin}
             target="_blank"
             rel="noreferrer"
           >
             <Linkedin size={16} /> LinkedIn
           </a>
 
-          <a
-            href="https://github.com/Ced09"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <Github size={16} /> GitHub
-          </a>
+         {links.github && (
+              <a
+                href={links.github}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Github size={16} /> GitHub
+              </a>
+            )}
 
-          <a href="mailto:contact@cedriss.dev">
+          <a href={links.email}>
             <Mail size={16} /> Email
           </a>
         </div>
