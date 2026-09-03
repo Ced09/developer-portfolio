@@ -11,13 +11,23 @@ export default function Footer({ id }) {
         <span className="footer__name">Cedriss</span>
 
         <div className="footer__links">
-          <a href="https://linkedin.com" target="_blank" rel="noreferrer">
+          <a
+            href="https://www.linkedin.com/in/cedriss-saint-louis-87a23866/"
+            target="_blank"
+            rel="noreferrer"
+          >
             <Linkedin size={16} /> LinkedIn
           </a>
-          <a href="https://github.com" target="_blank" rel="noreferrer">
+
+          <a
+            href="https://github.com/Ced09"
+            target="_blank"
+            rel="noreferrer"
+          >
             <Github size={16} /> GitHub
           </a>
-          <a href="mailto:hello@cedriss.dev">
+
+          <a href="mailto:contact@cedriss.dev">
             <Mail size={16} /> Email
           </a>
         </div>
